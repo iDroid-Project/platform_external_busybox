@@ -73,7 +73,7 @@ ALL_MODULES.$(LOCAL_MODULE).INSTALLED := \
     $(ALL_MODULES.$(LOCAL_MODULE).INSTALLED) $(SYMLINKS)
 
 
-# Build a static busybox for the recovery image
+# Build a static busybox for the ramdisk image
 include $(CLEAR_VARS)
 BUSYBOX_CONFIG:=minimal
 LOCAL_SRC_FILES := $(BUSYBOX_SRC_FILES)
@@ -111,7 +111,7 @@ LOCAL_MODULE := utility_busybox
 LOCAL_MODULE_TAGS := eng
 LOCAL_STATIC_LIBRARIES += libclearsilverregex libcutils libc libm 
 LOCAL_MODULE_CLASS := UTILITY_EXECUTABLES
-LOCAL_MODULE_PATH := $(PRODUCT_OUT)/utilities
-LOCAL_UNSTRIPPED_PATH := $(PRODUCT_OUT)/symbols/utilities
+LOCAL_MODULE_PATH := $(PRODUCT_OUT)/root
+LOCAL_UNSTRIPPED_PATH := $(PRODUCT_OUT)/symbols/root
 LOCAL_MODULE_STEM := busybox
 include $(BUILD_EXECUTABLE)
